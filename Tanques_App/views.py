@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.template import loader
+from django.template import Template, Context, loader
 from Tanques_App.models import Tanque
 
 # Create your views here.
@@ -8,7 +8,7 @@ from Tanques_App.models import Tanque
 
 
 def inicio(request):
-    return HttpResponse("Bienvenidos a Mi inicio")
+    return render(request, 'apptanques/index.html')
 
 def template1(request, nombre, apellido):
     return HttpResponse(f"hola compadre {nombre} {apellido}")
