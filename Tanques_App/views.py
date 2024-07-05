@@ -13,32 +13,35 @@ def inicio(request):
 def about(request):
     return render(request, 'about.html')
 
-def template1(request, nombre, apellido):
-    return HttpResponse(f"hola compadre {nombre} {apellido}")
+def agregar(request):
+    return render(request, 'apptanques/agregar.html')
 
-def template2(request, nombre, apellido):
-    
-    template = loader.get_template('template2.html')
-    
-    datos = {
-            'nombre': nombre , 
-            'apellido': apellido
-             }
-    
-    template_renderizado = template.render(datos)
-    
-    return HttpResponse(template_renderizado)
+def listar(request):
+    return render(request, 'apptanques/listar.html')
 
-def template3(request, nombre, apellido):
-    
-    datos = {
-            'nombre': nombre , 
-            'apellido': apellido
-             }
-    
-    return render(request, 'template2.html', datos)
+# def template1(request, nombre, apellido):
+#     return HttpResponse(f"hola compadre {nombre} {apellido}")
 
-def agregar(request, unidad, pais, tripulantes):
-    tanque = Tanque(unidad = unidad, pais = pais, tripulantes = tripulantes)
-    tanque.save()
-    return render(request, 'template_tanque/agregar.html', {"tanque": tanque})
+# def template2(request, nombre, apellido):
+    
+#     template = loader.get_template('template2.html')
+    
+#     datos = {
+#             'nombre': nombre , 
+#             'apellido': apellido
+#              }
+    
+#     template_renderizado = template.render(datos)
+    
+#     return HttpResponse(template_renderizado)
+
+# def template3(request, nombre, apellido):
+    
+#     datos = {
+#             'nombre': nombre , 
+#             'apellido': apellido
+#              }
+    
+#     return render(request, 'template2.html', datos)
+
+
