@@ -4,6 +4,7 @@ from Tanques_App import views
 
 urlpatterns = [
     path('', views.inicio),
+    path('about', views.about),
     path('template1/<str:nombre>/<str:apellido>', views.template1),
     path('template2/<str:nombre>/<str:apellido>', views.template2),
     path('template3/<str:nombre>/<str:apellido>', views.template3),

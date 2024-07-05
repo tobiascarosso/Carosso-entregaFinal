@@ -10,6 +10,9 @@ from Tanques_App.models import Tanque
 def inicio(request):
     return render(request, 'apptanques/index.html')
 
+def about(request):
+    return render(request, 'about.html')
+
 def template1(request, nombre, apellido):
     return HttpResponse(f"hola compadre {nombre} {apellido}")
 
